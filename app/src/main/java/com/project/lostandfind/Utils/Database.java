@@ -32,7 +32,7 @@ public class Database {
 
     public Database(){
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance("https://lost-and-found-6e8ce-default-rtdb.europe-west1.firebasedatabase.app");
+        mDatabase = FirebaseDatabase.getInstance("https://lost-and-found-5eca3-default-rtdb.europe-west1.firebasedatabase.app");
         mStorage = FirebaseStorage.getInstance();
     }
 

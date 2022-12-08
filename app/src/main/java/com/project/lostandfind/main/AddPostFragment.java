@@ -275,6 +275,7 @@ public class AddPostFragment extends Fragment {
                             Intent intent = result.getData();
                             Bitmap bitmap = (Bitmap)  intent.getExtras().get("data");
                             frag_add_post_IV_image.setImageBitmap(bitmap);
+                            imageUri = UtilsFunctions.getImageUri(activity, bitmap);
                             break;
                         case Activity.RESULT_CANCELED:
                             Toast.makeText(activity, "Camera canceled", Toast.LENGTH_SHORT).show();
