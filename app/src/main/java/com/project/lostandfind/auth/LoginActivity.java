@@ -74,9 +74,15 @@ public class LoginActivity extends AppCompatActivity {
         login_BTN_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String email = login_TIL_email.getEditText().getText().toString();
+                String password = login_TIL_password.getEditText().getText().toString();
+                if(email.isEmpty() || password.isEmpty()){
+                    Toast.makeText(LoginActivity.this, "Email and password required!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 User user = new User()
-                        .setEmail(login_TIL_email.getEditText().getText().toString())
-                        .setPassword(login_TIL_password.getEditText().getText().toString());
+                        .setEmail(email)
+                        .setPassword(password);
                 login_PB_loading.setVisibility(View.VISIBLE);
                 database.login(user);
             }
