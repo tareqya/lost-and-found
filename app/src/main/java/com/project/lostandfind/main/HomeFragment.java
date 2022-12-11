@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.project.lostandfind.R;
 import com.project.lostandfind.Utils.Database;
 import com.project.lostandfind.Utils.LostItemPost;
@@ -36,6 +37,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView frag_home_RV_lostItems;
     private ProgressBar frag_home_PB_loading;
     private User currentUser;
+    private LottieAnimationView home_empty;
 
     public HomeFragment() {
        db = new Database();
@@ -48,6 +50,7 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         findViews(root);
         initVars();
+        home_empty.setVisibility(View.INVISIBLE);
         return root;
     }
 
@@ -58,6 +61,7 @@ public class HomeFragment extends Fragment {
     private void findViews(View root) {
         frag_home_RV_lostItems = root.findViewById(R.id.frag_home_RV_lostItems);
         frag_home_PB_loading = root.findViewById(R.id.frag_home_PB_loading);
+        home_empty = root.findViewById(R.id.home_empty);
     }
 
     private void initVars() {
@@ -142,6 +146,12 @@ public class HomeFragment extends Fragment {
         frag_home_RV_lostItems.setItemAnimator(new DefaultItemAnimator());
         frag_home_RV_lostItems.setAdapter(lostItemAdapter);
         frag_home_PB_loading.setVisibility(View.INVISIBLE);
+        if(posts.size() == 0){
+            home_empty.setVisibility(View.VISIBLE);
+        }else{
+            home_empty.setVisibility(View.INVISIBLE);
+
+        }
     }
 
 

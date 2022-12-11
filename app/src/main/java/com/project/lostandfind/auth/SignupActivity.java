@@ -8,6 +8,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.project.lostandfind.R;
 import com.project.lostandfind.Utils.Database;
 import com.project.lostandfind.Utils.User;
@@ -24,7 +25,7 @@ public class SignupActivity extends AppCompatActivity {
     private MaterialButton signup_BTN_signup;
     private TextView signup_TV_msg;
     private Database database;
-    private ProgressBar signup_PB_loading;
+    private LottieAnimationView signup_PB_loading;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,7 @@ public class SignupActivity extends AppCompatActivity {
 
         findViews();
         initVars();
+        signup_PB_loading.setVisibility(View.INVISIBLE);
     }
 
     private void initVars() {

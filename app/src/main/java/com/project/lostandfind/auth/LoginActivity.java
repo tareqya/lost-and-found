@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.project.lostandfind.R;
 import com.project.lostandfind.Utils.Database;
 import com.project.lostandfind.Utils.User;
@@ -23,14 +24,16 @@ public class LoginActivity extends AppCompatActivity {
     private MaterialButton login_BTN_login;
     private Button login_BTN_createAccount;
     private Database database;
-    private ProgressBar login_PB_loading;
+    private LottieAnimationView login_PB_loading;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         findViews();
         initVars();
+        login_PB_loading.setVisibility(View.INVISIBLE);
     }
 
     private void initVars() {

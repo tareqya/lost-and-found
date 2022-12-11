@@ -57,15 +57,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <ProgressBar
-        android:id="@+id/login_PB_loading"
-        android:layout_below="@+id/login_TIL_password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        style="?android:attr/progressBarStyle"
-        android:visibility="invisible"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/login_BTN_login"
@@ -96,6 +87,14 @@
         android:textAllCaps="false"
         android:textSize="16sp"
         />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/login_PB_loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lottie_rawRes="@raw/loading"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
 
 
 </RelativeLayout>
